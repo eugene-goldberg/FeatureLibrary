@@ -3532,77 +3532,30 @@ function passwordMeterCtrl($scope){
 
 }
 
-function dataSourcesCtrl($scope, DTOptionsBuilder){
+function dataSourcesCtrl($scope){
 
-    $scope.dtOptions = DTOptionsBuilder.newOptions()
-        .withDOM('<"html5buttons"B>lTfgitp')
-        .withButtons([
-        ]);
-
-    //////////////////////////
-    $scope.getSelected = function () {
-        var ar = $scope.entities.filter(
-            function (value) {
-                if (value.checked == 1) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-        );
-
-        //console.log(ar);
-        return ar;
-    };
-    ///////////////////////////////////
-    $scope.entities = [{
-        "source": "hive://warehouse/trade_line",
-        "description" : "Trade Line",
-        "id": 1
-    }, {
-        "source": "hive://warehouse/creadit_line",
-        "description" : "Credit Line",
-        "id": 2
-    }, {
-        "source": "hive://warehouse/other_line",
-        "description" : "Other Line",
-        "id": 3
-    }];
-    //$scope.selected = [];
-    //var updateSelected = function (action, id) {
-    //    if (action == 'add' & $scope.selected.indexOf(id) == -1) $scope.selected.push(id);
-    //    if (action == 'remove' && $scope.selected.indexOf(id) != -1) $scope.selected.splice($scope.selected.indexOf(id), 1);
-    //};
+    //$scope.dtOptions = DTOptionsBuilder.newOptions()
+    //    .withDOM('<"html5buttons"B>lTfgitp')
+    //    .withButtons([
+    //    ]);
     //
-    //$scope.updateSelection = function ($event, id, title) {
-    //    var checkbox = $event.target;
-    //    var action = (checkbox.checked ? 'add' : 'remove');
-    //    console.log("id: " + id);
-    //    updateSelected(action, id);
-    //};
+    ////////////////////////////
+    //$scope.getSelected = function () {
+    //    var ar = $scope.entities.filter(
+    //        function (value) {
+    //            if (value.checked == 1) {
+    //                return true;
+    //            } else {
+    //                return false;
+    //            }
+    //        }
+    //    );
     //
-    //$scope.selectAll = function ($event) {
-    //    var checkbox = $event.target;
-    //    var action = (checkbox.checked ? 'add' : 'remove');
-    //    for (var i = 0; i < $scope.entities.length; i++) {
-    //        var entity = $scope.entities[i];
-    //        updateSelected(action, entity.id);
-    //    }
+    //    //console.log(ar);
+    //    return ar;
     //};
-    //
-    //$scope.getSelectedClass = function (entity) {
-    //    return $scope.isSelected(entity.id) ? 'selected' : '';
-    //};
-    //
-    //$scope.isSelected = function (id) {
-    //
-    //    return $scope.selected.indexOf(id) >= 0;
-    //};
-    //
-    ////something extra I couldn't resist adding :)
-    //$scope.isSelectedAll = function () {
-    //    return $scope.selected.length === $scope.entities.length;
-    //};
+    /////////////////////////////////////
+    $scope.cols = [];
 }
 
 
