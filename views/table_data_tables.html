@@ -1,0 +1,58 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Composer</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a>Tables</a>
+            </li>
+            <li class="active">
+                <strong>Composer</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight" ng-controller="dataSourcesCtrl">
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Data Sources </h5>
+
+                    <div ibox-tools></div>
+                </div>
+                <div class="ibox-content">
+                    <table datatable="ng" dt-options="dtOptions"  class="table table-striped table-bordered table-hover dataTables-example">
+                        <thead>
+                        <tr>
+                            <th>Select</th>
+                            <th>Dataset</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="e in entities">
+                            <!--<td>{{ person.id }}</td>-->
+                            <td width="30%">
+                                <input type="checkbox" name="selected"
+                                       ng-model="e.checked" ng-true-value="1" ng-false-value="0"
+                                       />
+                            </td>
+                            <td width="70%">{{ e.description }}</td>
+                            <!--<td>{{ person.lastName }}</td>-->
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+        <pre>{{getSelected() | json}}</pre>
+    </div>
+</div>
